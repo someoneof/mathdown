@@ -1,31 +1,65 @@
-www.mathdown.cn
-# Mathdown background
-As a math enthusiast, handwritten notebooks are a great way to organize thoughts and record inspirations, but poor handwriting makes this experience thoroughly frustrating.  
+# Mathdown
 
-When working through calculations, numbers are crooked and symbols are blurred, leaving me fearing that misreading a character will disrupt the logical flow of my deductions.  
+## 介绍
 
-When organizing formulas and theorems, I try to write each step clearly and systematically, but messy handwriting jumbles the formulas together, and highlighted key points look chaotic. Good mathematical knowledge ends up obscured by sloppy writing, making it incomprehensible. I not only fail to enjoy the neat beauty of notes but also feel a sense of frustration due to bad handwriting, greatly reducing the practical value of handwritten notes.  
+Mathdown 是一款**解决当前行业“Markdown 与公式编辑割裂”** 的工具，实现 Markdown 文本创作与数学公式编辑无缝融合，同时具备公式计算、便捷作图功能，并覆盖内容管理与检索的轻量专业工具。
 
-- Using Word for math notes makes editing formulas a real "torture."  
-  On one hand, you have to constantly switch between the mouse, Word, and the formula editor—jumping between interfaces repeatedly just to write one formula, which often interrupts your thinking.  
-  On the other hand, as a heavyweight software, Word has numerous redundant features and complicated formatting settings. Adjusting line spacing, aligning formulas, setting fonts, and other formatting tasks take up a lot of time. These unnecessary formatting hassles divert energy away from the math itself and waste it on irrelevant software operations, resulting in extremely low efficiency.  
+### 核心功能：Markdown 与公式编辑无缝融合
 
-- Although Markdown is lightweight, its experience when editing math formulas is equally poor.  
-  Firstly, you have to repeatedly switch between "content editing" and "preview" modes. You can’t see the final effect while writing a formula, and after previewing and finding issues, you have to go back to edit—this back-and-forth disrupts the thinking rhythm.  
-  Secondly, formulas must be written using LaTeX source code. A bunch of complex symbolic code clutters the text, which is not only dazzling to look at but also tedious to memorize various syntax rules and debug. Energy that should be focused on mathematical deduction is scattered on source code, greatly reducing note-taking efficiency.  
+1. **全语法 Markdown 支持**
+   全面兼容 Markdown 所有标准语法及扩展的文本格式元素（标题、列表、表格等），包括复杂的嵌套结构、图片插入、链接、文档元信息、脚注及文档跳转等，为用户提供完整高效的创作体验。
 
-I truly want a math note-taking software like this: simple to operate, no need to worry about formatting, no need to get stuck messing around with LaTeX source code, and no need to deal with unnecessarily complicated formatting settings. I just want to focus all my energy on formula input itself—being able to directly click and modify written formulas for real-time editing. Additionally, the formula auto-completion feature should be rich enough, popping up options when I type half a symbol, allowing me to write formulas as casually and naturally as having a chat.  
+2. **公式编辑所见即所得、编辑便捷**
+   打破传统 Markdown 工具的局限，采用混编编辑模式，用户可以直接在公式内部进行实时修改。无论是行内公式还是块级公式，都支持光标定位编辑，操作流畅，**极大降低公式编辑的学习成本和使用门槛**。
 
-But the reality is disappointing: today’s technology is clearly incredibly advanced. AI shows off all kinds of tricks—writing articles, drawing pictures, and even rockets landing on the moon time and time again to explore the unknowns of the universe. Yet, surprisingly, the experience of editing math formulas that we use every day still remains in a backward stage. Either you have to remember a bunch of complex syntax rules, or you have to switch repeatedly between multiple interfaces and modes, or the auto-completion feature is practically useless. Writing a simple formula casually takes a lot of effort. The feeling of being stumped by a small formula editing task while living in a high-tech era is really frustrating.  
+   ![编辑示例](./gif/gs-edit.gif)
 
-Looking through the numerous note-taking and editing software available on the market, it’s hard to find one that truly meets these needs. Some hide complex formatting settings, forcing people to spend energy on formatting; some can’t input formulas without LaTeX source code, requiring memorizing syntax and checking manuals just to write a symbol; some have real-time editing and auto-completion features that are practically non-existent, making you re-enter the entire formula when you want to modify it and offering no help when you want to save time; others have convoluted operational logic, completely lacking the ease of "writing casually and modifying easily." These software either neglect some needs while addressing others, or overcomplicate simple formula input. They always fail to allow people to completely put aside distractions and focus solely on the deduction and recording of math itself.
-Based on this, I decided to roll up my sleeves and create one myself. Building on Markdown syntax and integrating real-time math formula editing, Mathdown was thus born.
+3. **光标移动系统实现编辑一体化**
+   全文档采用统一光标操作模式，实现 Markdown 文本（标题、段落、列表、表格、链接等）与公式的内容编辑和统一选中操作。支持鼠标自然选择和键盘快捷键，具备**强大的内容块操作能力**。用户可以通过快捷键快速定位到目标位置，支持跨段落移动光标，支持双击选中单词或公式，支持从文本编辑切换到公式编辑或从公式切换到文本编辑，全程无需切换编辑模式，编辑、修改、删除、复制粘贴等操作均高效便捷。
 
-# Mathdown Introduction
-It is a personal knowledge system focusing on mathematical formula editing. As the world's first Markdown software that supports real-time editing of mathematical formulas, it delivers a smooth formula editing experience.
+   ![光标移动](./gif/caret-move.gif)
+   ![删除操作](./gif/del-DMtQlyO0.gif)
+   ![复制粘贴](./gif/copy-paste.gif)
 
-# Why is the experience described as "smooth"?  
-- Real-time editing directly on formulas—no more switching back and forth between source code and preview.  
-- A rewritten cursor system that makes editing formula blocks identical to editing plain text, allowing you to keep your hands on the keyboard at all times.  
-- Pinyin completion, command completion, custom completion, and expression completion.  
-- Bidirectional links and an automatically navigable tag system, ensuring no piece of knowledge remains an isolated island.
+### 增强功能提升用户操作效率和体验
+
+1. **双向联想补全**
+   - **LaTeX 拼音联想补全**：专为公式编辑设计的智能 LaTeX 命令（如希腊字母、运算符等）联想补全。例如输入 `\partial` 的拼音 `pian`（偏导的拼音），可匹配到对应的 LaTeX 命令 `\partial`，大幅提升公式编辑效率。
+     ![拼音补全](./gif/py-bq.gif)
+   - **历史公式联想补全**：记录用户当前文档中的历史公式内容，当输入类似公式（如 `3x^2+2`）时，系统会自动推荐 `3x^2` 或 `3x^2+2` 等选项，帮助用户快速复用，减少重复输入，提高公式编写效率。
+     ![公式补全](./gif/expr-bq.gif)
+
+2. **智能作图与数学可视化**
+   提供高效的作图功能，支持多种数学图形：
+   - **选中公式自动提取并作图**：用户可以选中文档中的公式（如 `y=\log x` 或 `y=2^x`）或数据（如 `A (1,2)`），系统会自动识别并提取关键信息，一键生成对应图形，支持曲线图、折线图、散点图等，可调整样式，优化作图效果。
+     ![选择作图](./gif/draw-select.gif)
+     ![自动作图](./gif/auto-draw.gif)
+   - **支持 2D 图形动态交互与编辑**：用户可以通过鼠标拖拽调整图形参数，实时预览效果，生成 2D 数学图形。例如修改公式或调整坐标点（如从 `(1,0)` 到 `(10,1)` 或 `(0,1)` 到 `(1,2)`），系统会自动识别并更新图形，支持快速绘制标准图形。
+     ![图形交互](./gif/graph.gif)
+   同时支持多函数范围对比作图、添加标注等数学可视化相关功能。
+
+3. **公式计算与变形**
+   支持在公式编辑过程中实时进行计算和公式变形，包括求解结果、公式拆分、合并同类项、公式化简等，为学生解题、教师备课提供便利。
+   ![公式变形](./gif/morph.gif)
+   支持矩阵运算、方程求解、微积分等高等数学内容，满足较高的数学计算需求。
+
+### 知识管理高效组织与检索
+
+1. **双向链接系统**
+   支持文档间的双向链接，用户可以快速跳转和回溯数据，构建知识网络。包含数学公式的文档可以关联到对应的解释说明，在编辑时自动显示相关引用，实现知识的网状连接。
+
+2. **标签分类系统**
+   可对文档内容自动添加标签（如 `#微积分#`、`#线性代数#` 等），通过标签筛选不同类别的内容，使文档分类更规范。
+
+3. **全文检索系统**
+   采用高效全文检索技术，支持根据关键词搜索文档内容、公式，精确匹配公式中的符号、公式结构及标签信息，快速定位到目标内容，提升内容管理效率。
+
+## QQ交流群
+
+- 617674925
+
+## 下载
+
+### Windows
+- [Github](https://github.com/someoneof/mathdown/releases/download/v2.0.0/Mathdown-2.0.0-win.exe)
+- [腾讯微云](https://share.weiyun.com/0Ay7vDaT)
